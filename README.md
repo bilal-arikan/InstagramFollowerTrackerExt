@@ -10,6 +10,10 @@ A Chrome extension that tracks your Instagram followers over time and instantly 
 - **Search & Browse** — Filter any snapshot's follower list by name or username.
 - **Privacy First** — All data stays in your browser. Nothing is sent to any server.
 
+## Screenshots
+
+|<img width="275" height="573" alt="image" src="https://github.com/user-attachments/assets/71030236-2a83-455b-b73b-59547607482b" />|<img width="275" height="595" alt="image" src="https://github.com/user-attachments/assets/06d9ed96-f5d6-4a38-9394-f6cddba4414b" />|<img width="275" height="515" alt="image" src="https://github.com/user-attachments/assets/081872ea-1deb-4a9a-82bd-1157f55cda66" />|
+
 ## Installation
 
 1. Clone the repository:
