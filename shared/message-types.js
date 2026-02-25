@@ -1,0 +1,16 @@
+// Message types for communication between popup, service worker, and content scripts
+export const MSG = {
+  // Follower tracking
+  SCAN_FOLLOWERS: "SCAN_FOLLOWERS",
+  SCAN_FOLLOWERS_PROGRESS: "SCAN_FOLLOWERS_PROGRESS",
+  SCAN_FOLLOWERS_COMPLETE: "SCAN_FOLLOWERS_COMPLETE",
+  SCAN_FOLLOWERS_ERROR: "SCAN_FOLLOWERS_ERROR",
+
+  // Follower diff
+  GET_SNAPSHOTS: "GET_SNAPSHOTS",
+  GET_DIFF: "GET_DIFF",
+  DELETE_SNAPSHOT: "DELETE_SNAPSHOT",
+
+  // General
+  CANCEL_OPERATION: "CANCEL_OPERATION",
+};

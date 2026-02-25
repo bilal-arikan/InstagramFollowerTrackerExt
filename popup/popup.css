@@ -1,0 +1,352 @@
+/* Popup-specific styles */
+body {
+  width: 380px;
+  min-height: 480px;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(
+    135deg,
+    var(--ig-gradient-start),
+    var(--ig-primary),
+    var(--ig-gradient-mid),
+    var(--ig-gradient-end)
+  );
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Content area */
+.tab-content {
+  padding: 16px;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+#compare-section .section-title {
+  margin-top: 8px;
+}
+
+/* Snapshot select */
+.snapshot-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+/* Diff results */
+.diff-section {
+  margin-top: 12px;
+}
+
+.diff-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.diff-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.diff-list:empty {
+  display: none;
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stat-box {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--text-secondary);
+}
+
+.empty-state p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Snapshot list */
+.snapshot-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.snapshot-info {
+  flex: 1;
+}
+
+.snapshot-date {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.snapshot-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.snapshot-delete {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.snapshot-delete:hover {
+  color: var(--danger);
+}
+
+/* Action buttons row */
+.action-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.action-row .btn {
+  flex: 1;
+}
+
+/* Follower list (inside snapshot detail view) */
+.follower-list {
+  max-height: 340px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.follower-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--bg-tertiary);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.follower-row:last-child {
+  border-bottom: none;
+}
+
+.follower-row:hover {
+  background: var(--bg-tertiary);
+}
+
+.follower-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-tertiary);
+}
+
+.follower-avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ig-gradient-start), var(--ig-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.follower-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.follower-username {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.follower-fullname {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Search box */
+.search-box {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  margin-bottom: 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus {
+  border-color: var(--ig-primary);
+}
+
+/* Snapshot detail view back button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--ig-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Clickable snapshot item */
+.snapshot-item {
+  cursor: pointer;
+}
+
+.snapshot-item:hover {
+  border-color: var(--ig-primary);
+}
+
+/* Diff list rows with avatars */
+.diff-list .follower-row {
+  padding: 6px 10px;
+}
+
+/* Snapshot list top spacing */
+#snapshot-list {
+  margin-top: 10px;
+}
+
+/* Toast notifications */
+#toast-container {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.toast {
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.toast-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-error {
+  background: #fce4ec;
+  color: var(--danger);
+  border: 1px solid #f8bbd0;
+}
+
+.toast-success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.toast-info {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+}
+

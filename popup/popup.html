@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="popup.css">
+  <title>Instagram Follower Tracker</title>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>Instagram Follower Tracker</h1>
+  </div>
+
+  <!-- Content -->
+  <div class="tab-content">
+
+    <!-- Scan / Stop Button -->
+    <button class="btn btn-primary btn-full" id="btn-scan-followers">
+      Scan Followers
+    </button>
+
+    <!-- Progress -->
+    <div id="follower-progress" class="hidden">
+      <div class="progress-bar" style="margin-top: 12px;">
+        <div class="progress-bar-fill" id="follower-progress-fill" style="width: 0%"></div>
+      </div>
+      <p class="status-text" id="follower-status">Starting scan...</p>
+    </div>
+
+    <!-- Snapshot List View -->
+    <div id="snapshot-list-view">
+      <div id="snapshot-list" class="empty-state">
+        <p>No snapshots yet. Scan your followers to create one.</p>
+      </div>
+    </div>
+
+    <!-- Snapshot Detail View (hidden by default) -->
+    <div id="snapshot-detail-view" class="hidden">
+      <button class="back-btn" id="btn-back-to-snapshots">&#8592; Back</button>
+      <div class="section-title" id="detail-snapshot-title">Followers</div>
+      <input class="search-box" type="text" id="follower-search" placeholder="Search by name or username...">
+      <div class="follower-list" id="detail-follower-list"></div>
+    </div>
+
+    <!-- Compare -->
+    <div id="compare-section" class="hidden">
+      <div class="section-title">Compare Snapshots</div>
+      <select class="snapshot-select" id="select-older">
+        <option value="">Select older snapshot...</option>
+      </select>
+      <select class="snapshot-select" id="select-newer">
+        <option value="">Select newer snapshot...</option>
+      </select>
+      <button class="btn btn-secondary btn-full" id="btn-compare">
+        Compare
+      </button>
+    </div>
+
+    <!-- Diff Results -->
+    <div id="diff-results" class="hidden">
+      <div class="section-title">Results</div>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-value" id="stat-unfollowed">0</div>
+          <div class="stat-label">Unfollowed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="stat-new">0</div>
+          <div class="stat-label">New</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="stat-unchanged">0</div>
+          <div class="stat-label">Unchanged</div>
+        </div>
+      </div>
+
+      <div class="diff-section">
+        <div class="diff-header">
+          <span class="badge badge-danger" id="unfollowed-badge">Unfollowed (0)</span>
+        </div>
+        <div class="diff-list" id="unfollowed-list"></div>
+      </div>
+
+      <div class="diff-section">
+        <div class="diff-header">
+          <span class="badge badge-success" id="new-badge">New Followers (0)</span>
+        </div>
+        <div class="diff-list" id="new-list"></div>
+      </div>
+
+      <div class="diff-section">
+        <div class="diff-header">
+          <span class="badge badge-neutral" id="unchanged-badge">Unchanged (0)</span>
+        </div>
+        <div class="diff-list" id="unchanged-list"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="popup.js"></script>
+  <script src="popup-followers.js"></script>
+</body>
+</html>

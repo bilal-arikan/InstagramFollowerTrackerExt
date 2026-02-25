@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Follower Tracker",
+  "version": "1.0.0",
+  "description": "Track your Instagram followers over time and instantly see who unfollowed you.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.instagram.com/*",
+    "https://scontent*.cdninstagram.com/*",
+    "https://scontent*.xx.fbcdn.net/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": [
+        "content-scripts/utils/dom-helpers.js",
+        "content-scripts/utils/rate-limiter.js",
+        "content-scripts/utils/scroll-automation.js",
+        "content-scripts/follower-scraper.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+  }
+}
