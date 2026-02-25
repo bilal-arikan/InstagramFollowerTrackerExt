@@ -1,6 +1,6 @@
 // Central message router for the extension
 import { MSG } from "../shared/message-types.js";
-import { saveSnapshot, getSnapshots, deleteSnapshot } from "./storage-manager.js";
+import { saveSnapshot, getSnapshots, deleteSnapshot, importSnapshots } from "./storage-manager.js";
 import { computeDiff, createSnapshot } from "./follower-tracker.js";
 
 // Listen for messages from popup and content scripts
@@ -27,6 +27,9 @@ async function handleMessage(message, sender) {
 
     case MSG.DELETE_SNAPSHOT:
       return { snapshots: await deleteSnapshot(message.timestamp) };
+
+    case MSG.IMPORT_SNAPSHOTS:
+      return handleImportSnapshots(message);
 
     default:
       return { error: `Unknown message type: ${message.type}` };
@@ -59,6 +62,10 @@ async function handleScanComplete(message) {
   }).catch(() => {});
 
   return { snapshot, totalSnapshots: snapshots.length };
+}
+
+async function handleImportSnapshots(message) {
+  return importSnapshots(message.data);
 }
 
 async function handleGetDiff(message) {

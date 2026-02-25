@@ -8,6 +8,7 @@ A Chrome extension that tracks your Instagram followers over time and instantly 
 - **Snapshot History** — Saves up to 10 timestamped snapshots locally.
 - **Compare Snapshots** — See who unfollowed, who's new, and who stayed.
 - **Search & Browse** — Filter any snapshot's follower list by name or username.
+- **Export / Import** — Back up your snapshots as JSON and restore them on any device.
 - **Privacy First** — All data stays in your browser. Nothing is sent to any server.
 
 ## Screenshots

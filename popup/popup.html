@@ -36,6 +36,19 @@
       </div>
     </div>
 
+    <!-- Export / Import -->
+    <div id="export-import-section" class="hidden">
+      <div class="action-row">
+        <button class="btn btn-secondary" id="btn-export" disabled>Export</button>
+        <button class="btn btn-secondary" id="btn-import">Import</button>
+      </div>
+      <label class="checkbox-label" id="strip-pics-label">
+        <input type="checkbox" id="chk-strip-pics">
+        <span>Strip profile pictures (smaller file)</span>
+      </label>
+      <input type="file" id="import-file-input" accept=".json" class="hidden">
+    </div>
+
     <!-- Snapshot Detail View (hidden by default) -->
     <div id="snapshot-detail-view" class="hidden">
       <button class="back-btn" id="btn-back-to-snapshots">&#8592; Back</button>
@@ -105,6 +118,7 @@
 
   <!-- Scripts -->
   <script src="popup.js"></script>
+  <script src="popup-export-import.js"></script>
   <script src="popup-followers.js"></script>
 </body>
 </html>

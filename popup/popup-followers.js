@@ -24,6 +24,9 @@ function initFollowersTab() {
   btnBack.addEventListener("click", showSnapshotListView);
   searchBox.addEventListener("input", () => filterFollowerList(searchBox.value));
 
+  // Initialize export/import button handlers
+  initExportImport();
+
   // Load existing snapshots from storage on popup open
   loadSnapshots();
 
@@ -122,12 +125,19 @@ async function loadSnapshots() {
 
   const listEl = document.getElementById("snapshot-list");
 
+  // Show export/import section and toggle export button
+  showElement("export-import-section");
+  const btnExport = document.getElementById("btn-export");
+
   if (snapshots.length === 0) {
     listEl.className = "empty-state";
     listEl.innerHTML = "<p>No snapshots yet. Scan your followers to create one.</p>";
     hideElement("compare-section");
+    btnExport.disabled = true;
     return;
   }
+
+  btnExport.disabled = false;
 
   listEl.className = "";
   listEl.innerHTML = snapshots
